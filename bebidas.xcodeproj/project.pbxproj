@@ -14,6 +14,10 @@
 		07C8542729AECF9E003B2A44 /* bebidas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07C8542529AECF9E003B2A44 /* bebidas.xcdatamodeld */; };
 		07C8542929AECF9F003B2A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C8542829AECF9F003B2A44 /* Assets.xcassets */; };
 		07C8542C29AECF9F003B2A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C8542A29AECF9F003B2A44 /* LaunchScreen.storyboard */; };
+		07C8543429AED078003B2A44 /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C8543329AED078003B2A44 /* drinks.json */; };
+		07C8543729AED91A003B2A44 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8543629AED91A003B2A44 /* DrinkModel.swift */; };
+		07C8543929AEE762003B2A44 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8543829AEE762003B2A44 /* DetailViewController.swift */; };
+		07C8543B29AF188D003B2A44 /* CreateDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8543A29AF188D003B2A44 /* CreateDrinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		07C8542829AECF9F003B2A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07C8542B29AECF9F003B2A44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07C8542D29AECF9F003B2A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C8543329AED078003B2A44 /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		07C8543629AED91A003B2A44 /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
+		07C8543829AEE762003B2A44 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		07C8543A29AF188D003B2A44 /* CreateDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDrinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,28 @@
 		07C8541B29AECF9E003B2A44 /* bebidas */ = {
 			isa = PBXGroup;
 			children = (
+				07C8543529AED90D003B2A44 /* Models */,
 				07C8541C29AECF9E003B2A44 /* AppDelegate.swift */,
 				07C8541E29AECF9E003B2A44 /* SceneDelegate.swift */,
 				07C8542029AECF9E003B2A44 /* ViewController.swift */,
 				07C8542229AECF9E003B2A44 /* Main.storyboard */,
+				07C8543329AED078003B2A44 /* drinks.json */,
 				07C8542829AECF9F003B2A44 /* Assets.xcassets */,
 				07C8542A29AECF9F003B2A44 /* LaunchScreen.storyboard */,
 				07C8542D29AECF9F003B2A44 /* Info.plist */,
 				07C8542529AECF9E003B2A44 /* bebidas.xcdatamodeld */,
+				07C8543829AEE762003B2A44 /* DetailViewController.swift */,
+				07C8543A29AF188D003B2A44 /* CreateDrinkViewController.swift */,
 			);
 			path = bebidas;
+			sourceTree = "<group>";
+		};
+		07C8543529AED90D003B2A44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				07C8543629AED91A003B2A44 /* DrinkModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +150,7 @@
 			files = (
 				07C8542C29AECF9F003B2A44 /* LaunchScreen.storyboard in Resources */,
 				07C8542929AECF9F003B2A44 /* Assets.xcassets in Resources */,
+				07C8543429AED078003B2A44 /* drinks.json in Resources */,
 				07C8542429AECF9E003B2A44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,8 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C8542129AECF9E003B2A44 /* ViewController.swift in Sources */,
+				07C8543B29AF188D003B2A44 /* CreateDrinkViewController.swift in Sources */,
 				07C8541D29AECF9E003B2A44 /* AppDelegate.swift in Sources */,
 				07C8542729AECF9E003B2A44 /* bebidas.xcdatamodeld in Sources */,
+				07C8543929AEE762003B2A44 /* DetailViewController.swift in Sources */,
+				07C8543729AED91A003B2A44 /* DrinkModel.swift in Sources */,
 				07C8541F29AECF9E003B2A44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -294,11 +318,15 @@
 				DEVELOPMENT_TEAM = U6D3L34V7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bebidas/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para guardar fotos de las bebidas";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Para guardar los datos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Para guardar fotos y leerlas";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,11 +350,15 @@
 				DEVELOPMENT_TEAM = U6D3L34V7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bebidas/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para guardar fotos de las bebidas";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "Para guardar los datos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Para guardar fotos y leerlas";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
