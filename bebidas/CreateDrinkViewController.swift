@@ -26,14 +26,17 @@ class CreateDrinkViewController: UIViewController, UIImagePickerControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let result = getDrinks()
+        
+        if ( result["result"] as! String == "ok" ) {
+            drinks = result["data"] as! [DrinkModel]
+        }
+        
         //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-            //tap.cancelsTouchesInView = false
-
-            view.addGestureRecognizer(tap)
-        getDrinks()
+        view.addGestureRecognizer(tap)
+            
 
     }
     
@@ -45,20 +48,18 @@ class CreateDrinkViewController: UIViewController, UIImagePickerControllerDelega
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("entrando")
         var perform = false
         if validateFields() {
-            print("paso")
             let newDrink = DrinkModel(directions: directionsTextField.text!, ingredients: ingredientsTextField.text!, name: nameTextField.text!, img: imgName)
             
             var newArray = drinks
             newArray.append(newDrink)
 
             writeJSON(items: newArray)
+            
             perform = true
-        } else {
-            print("text vacio")
         }
+        
         return perform
     }
     
@@ -76,63 +77,26 @@ class CreateDrinkViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-
-    
-    private func getDrinks()
-    {
-        if let libraryURL = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask).first {
-            let path = libraryURL.appendingPathComponent("drinks.json")
-            if ( FileManager.default.fileExists(atPath: path.path) ) {
-                let path = path.path
-            } else {
-                guard let path = Bundle.main.url(forResource: "drinks", withExtension: "json") else {
-                    return
-                }
-            }
-            do {
-                let data = try Data(contentsOf: path)
-                drinks = try JSONDecoder().decode([DrinkModel].self, from: data)
-            } catch {
-                print(error)
-            }
-        } else {
-            return
-        }
-
-    }
-    
-    
-    func writeJSON(items: [DrinkModel]) {
-        do {
-            let fileURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                    .appendingPathComponent("drinks.json")
-
-            let encoder = JSONEncoder()
-            try encoder.encode(items).write(to: fileURL)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
     
     @IBAction func cameraButton(_ sender: UIButton) {
         imgPickCon = UIImagePickerController()
         imgPickCon?.delegate = self
-        // si se permite la edición (recorte) de las imagenes
+        //Resize images active
         imgPickCon?.allowsEditing = true
         //
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             switch AVCaptureDevice.authorizationStatus(for:.video) {
             case .authorized:self.launchIMGPC(.camera)
             case .notDetermined:AVCaptureDevice.requestAccess (for: .video) { permiso in
-                                    if permiso {
-                                        self.launchIMGPC(.camera)
-                                    }
-                                    else {
-                                        self.launchIMGPC(.photoLibrary)
-                                    }
-                                }
+                if permiso {
+                    self.launchIMGPC(.camera)
+                }
+                else {
+                    self.launchIMGPC(.photoLibrary)
+                }
+            }
             default:
-                permisos()
+                permissions()
                 return
             }
         }
@@ -141,7 +105,7 @@ class CreateDrinkViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    func permisos () {
+    func permissions () {
         let ac = UIAlertController(title: "", message:"Se requiere permiso para usar la cámara. Puede configurarlo desde settings ahora", preferredStyle: .alert)
         let action = UIAlertAction(title: "SI", style: .default) {
             alertaction in

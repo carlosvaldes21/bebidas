@@ -221,8 +221,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-tE-hmC">
-                                <rect key="frame" x="20" y="79" width="353" height="400"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wineglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-tE-hmC">
+                                <rect key="frame" x="20" y="78.333333333333343" width="353" height="401.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="Qq4-VY-eyT"/>
                                 </constraints>
@@ -284,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="wineglass" catalog="system" width="95" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

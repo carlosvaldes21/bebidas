@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07BE938429AFF12900F92750 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE938329AFF12900F92750 /* Helpers.swift */; };
+		07BE938729AFFE3600F92750 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BE938629AFFE3500F92750 /* Network.framework */; };
 		07C8541D29AECF9E003B2A44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8541C29AECF9E003B2A44 /* AppDelegate.swift */; };
 		07C8541F29AECF9E003B2A44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8541E29AECF9E003B2A44 /* SceneDelegate.swift */; };
 		07C8542129AECF9E003B2A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8542029AECF9E003B2A44 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07BE938329AFF12900F92750 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		07BE938629AFFE3500F92750 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		07C8541929AECF9E003B2A44 /* bebidas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bebidas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C8541C29AECF9E003B2A44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C8541E29AECF9E003B2A44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,17 +45,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BE938729AFFE3600F92750 /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07BE938229AFF0DC00F92750 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07BE938329AFF12900F92750 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		07BE938529AFFE3500F92750 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07BE938629AFFE3500F92750 /* Network.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		07C8541029AECF9E003B2A44 = {
 			isa = PBXGroup;
 			children = (
 				07C8541B29AECF9E003B2A44 /* bebidas */,
 				07C8541A29AECF9E003B2A44 /* Products */,
+				07BE938529AFFE3500F92750 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +88,7 @@
 		07C8541B29AECF9E003B2A44 /* bebidas */ = {
 			isa = PBXGroup;
 			children = (
+				07BE938229AFF0DC00F92750 /* Helpers */,
 				07C8543529AED90D003B2A44 /* Models */,
 				07C8541C29AECF9E003B2A44 /* AppDelegate.swift */,
 				07C8541E29AECF9E003B2A44 /* SceneDelegate.swift */,
@@ -165,6 +188,7 @@
 				07C8542129AECF9E003B2A44 /* ViewController.swift in Sources */,
 				07C8543B29AF188D003B2A44 /* CreateDrinkViewController.swift in Sources */,
 				07C8541D29AECF9E003B2A44 /* AppDelegate.swift in Sources */,
+				07BE938429AFF12900F92750 /* Helpers.swift in Sources */,
 				07C8542729AECF9E003B2A44 /* bebidas.xcdatamodeld in Sources */,
 				07C8543929AEE762003B2A44 /* DetailViewController.swift in Sources */,
 				07C8543729AED91A003B2A44 /* DrinkModel.swift in Sources */,

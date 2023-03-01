@@ -20,36 +20,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         drinksTableView.delegate = self
         drinksTableView.dataSource = self
-        getDrinks()
+        removeAllFiles(fileExtension: "json")
+        let result = getDrinks()
+        
+        if ( result["result"] as! String == "ok" ) {
+            drinks = result["data"] as! [DrinkModel]
+        }
     }
 
     
     @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
-        getDrinks()
-        drinksTableView.reloadData()
-    }
-    
-    
-    func getDrinks()
-    {
-        if let libraryURL = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask).first {
-            let path = libraryURL.appendingPathComponent("drinks.json")
-            if ( FileManager.default.fileExists(atPath: path.path) ) {
-                let path = path.path
-            } else {
-                guard let path = Bundle.main.url(forResource: "drinks", withExtension: "json") else {
-                    return
-                }
-            }
-            do {
-                let data = try Data(contentsOf: path)
-                drinks = try JSONDecoder().decode([DrinkModel].self, from: data)
-            } catch {
-                print(error)
-            }
-        } else {
-            return
+        
+        let result = getDrinks()
+        
+        if ( result["result"] as! String == "ok" ) {
+            drinks = result["data"] as! [DrinkModel]
         }
+        
+        drinksTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
